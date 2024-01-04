@@ -104,7 +104,7 @@ def  main():
             inputs= [GENDER, ADMISSION_TYPE, ADMISSION_LOCATION, INSURANCE,LANGUAGE, RELIGION, MARITAL_STATUS, ETHNICITY, DIAGNOSIS, DBSOURCE, FIRST_CAREUNIT, LAST_CAREUNIT]
             values=[]
             for path, input_ in zip(paths, inputs):
-                path="Desktop/ICU_App/Pickles/" + path 
+                path="Pickles/" + path 
                 pkl_file = open(path, 'rb')
                 le = pickle.load(pkl_file) 
                 pkl_file.close()
@@ -118,11 +118,11 @@ def  main():
                 with st.spinner('Loading......'):
                     ft=np.array([variables]).reshape(1,-1) 
 
-                    scalerfile = 'Desktop/ICU_App/Pickles/scaler.sav'
+                    scalerfile = 'Pickles/scaler.sav'
                     scaler = pickle.load(open(scalerfile, 'rb'))
                     features = scaler.transform(ft)
                     
-                    f = open('Desktop/ICU_App/Pickles/classifier.joblib', 'rb')   
+                    f = open('Pickles/classifier.joblib', 'rb')   
                     classifier = joblib.load(f)
                     f.close()
 
