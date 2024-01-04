@@ -155,6 +155,7 @@ def  main():
 import streamlit 
 import sys
 from streamlit.web import cli as stcli
+from streamlit import runtime
 if __name__ == '__main__':
     if runtime.exists():
         main()
